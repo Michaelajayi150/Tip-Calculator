@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <!-- Bootstrap CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header class="text-center">
+    <h1><img src="./images/logo.svg" alt="Logo" /></h1>
+  </header>
+  <main>
+    <form class="form">
+      <div class="form-group input-value">
+        <label for="bill" class="d-flex justify-content-between align-items-center">
+          <h2>Bill</h2>
+          <small class="error-message bill"></small>
+        </label>
+        <div class="inputs">
+          <img src="./images/icon-dollar.svg" alt="dollar" />
+          <input class="form-control font mt-2 mb-4" id="bill" type="tel" placeholder="0" />
+        </div>
+
+        <h2>Select Tip %</h2>
+        <small class="error-message custom"></small>
+        <div class="tip-group align-items-center justify-content-between flex-wrap mt-3 mb-4">
+          <div class="form-group text-center font">
+            <input value="5" class="tip-count" id="tip1" type="radio" name="tip" />
+            <label for="tip1">5%</label>
+          </div>
+          <div class="form-group text-center font">
+            <input value="10" class="tip-count" id="tip2" type="radio" name="tip" />
+            <label for="tip2">10%</label>
+          </div>
+          <div class="form-group text-center font">
+            <input value="15" class="tip-count" id="tip3" type="radio" checked name="tip" />
+            <label for="tip3">15%</label>
+          </div>
+          <div class="form-group text-center font">
+            <input value="25" class="tip-count" id="tip4" type="radio" name="tip" />
+            <label for="tip4">25%</label>
+          </div>
+          <div class="form-group text-center font">
+            <input value="50" class="tip-count" id="tip5" type="radio" name="tip" />
+            <label for="tip5">50%</label>
+          </div>
+          <div class="form-group text-center font">
+            <input class="form-control font" id="custom" type="tel" maxlength="2" placeholder="Custom" />
+            <input class="tip-count" id="select" type="radio" name="tip" autocomplete="off" />
+          </div>
+        </div>
+
+        <label for="people" class="d-flex justify-content-between align-items-center">
+          <h2>Number of People</h2>
+          <small class="error-message people"></small>
+        </label>
+        <div class="inputs">
+          <img src="./images/icon-person.svg" alt="dollar" />
+          <input class="form-control font mt-2" id="people" type="tel" maxlength="2" placeholder="1" />
+        </div>
+      </div>
+
+      ]]
+      <div class="form-group calculated">
+        <div class="tip-amount">
+          <div>
+            <h2>Tip Amount</h2>
+            <p>/ person</p>
+          </div>
+          <div>
+            <h2 id="tip" class="font">$0.00</h2>
+          </div>
+        </div>
+
+        <div class="tip-amount">
+          <div>
+            <h2>Total</h2>
+            <p>/ person</p>
+          </div>
+          <div>
+            <h2 id="total" class="font">$0.00</h2>
+          </div>
+        </div>
+
+        <button id="reset" type="reset" class="reset-btn font">Reset</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Michael Ajayi</a>.
+  </footer>
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="./main.js"></script>
+
+</html>

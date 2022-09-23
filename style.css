@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --error: hsl(0, 92%, 64%);
+}
+
+body {
+  font-family: "Space Mono", sans-serif;
+  background-color: var(--light-grayish-cyan);
+  color: var(--very-dark-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 0;
+  gap: 40px;
+}
+
+main {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+}
+
+.font {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.form .inputs {
+  position: relative;
+}
+
+.form .inputs img {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  translate: 0 -50%;
+}
+
+.tip-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.form input[type="tel"] {
+  text-align: end;
+  background-color: var(--very-light-grayish-cyan);
+  border: none;
+  outline: none;
+}
+
+.form input[type="tel"]:focus {
+  box-shadow: 0 0 0 0.15rem var(--strong-cyan);
+}
+
+.form input[type="tel"].valued {
+  box-shadow: 0 0 0 0.15rem var(--strong-cyan);
+}
+
+.form input[type="tel"].error {
+  box-shadow: 0 0 0 0.15rem var(--error);
+}
+
+.tip-group .form-group input[type="radio"] {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+}
+
+.tip-group .form-group label {
+  width: 100%;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tip-group .form-group:last-of-type label {
+  background-color: var(--very-light-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.tip-group .form-group label {
+  width: 100%;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.tip-group .form-group label:hover,
+.calculated .reset-btn:hover {
+  background-color: hsl(173deg 61% 77%);
+  color: var(--very-dark-cyan);
+}
+
+.tip-group .form-group input[type="radio"]:checked + label {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.calculated {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  border-radius: 20px;
+  padding: 3rem 1rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.calculated .tip-amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calculated .tip-amount p {
+  color: var(--grayish-cyan);
+}
+
+.calculated .tip-amount .font {
+  font-size: 32px;
+  color: var(--strong-cyan);
+}
+
+.calculated .reset-btn {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+.error-message {
+  color: var(--error);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+
+  main {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+
+    width: 80%;
+    max-width: 1050px;
+    margin: auto;
+  }
+
+  .form {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .form .calculated,
+  .form .input-value {
+    flex: 0 1 50%;
+  }
+
+  .form .calculated {
+    padding: 3rem 3rem 3rem;
+  }
+}
