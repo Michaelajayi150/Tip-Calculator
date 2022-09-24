@@ -12,7 +12,7 @@ let inputValues = {
 function getSelected() {
   let selected = document.querySelector("input:checked");
   selected = selected.value;
-  inputValues["tip"] = parseInt(selected);
+  inputValues["tip"] = parseFloat(selected);
 }
 
 function evaluateBill({ bill, tip, people }) {
@@ -46,10 +46,10 @@ function validateInput(e, inputEl) {
       if (replaced == 0) {
         inputEl.classList.add("error");
         errorMessage.innerHTML = "Cannot be zero";
-        inputValues[inputEl.id] = parseInt(0);
+        inputValues[inputEl.id] = parseFloat(0);
       } else {
         errorMessage.innerHTML = "";
-        inputValues[inputEl.id] = parseInt(replaced);
+        inputValues[inputEl.id] = parseFloat(replaced);
       }
       break;
     case "custom":
@@ -71,13 +71,13 @@ function validateInput(e, inputEl) {
       if (Math.floor(replaced) == 0) {
         inputEl.classList.add("error");
         errorMessage.innerHTML = "Cannot be zero";
-        inputValues[inputEl.id] = parseInt(0);
+        inputValues[inputEl.id] = parseFloat(0);
       } else if (replaced > 21) {
         inputEl.classList.add("error");
         errorMessage.innerHTML = "Limit is 21";
       } else {
         errorMessage.innerHTML = "";
-        inputValues[inputEl.id] = parseInt(replaced);
+        inputValues[inputEl.id] = parseFloat(replaced);
       }
   }
 }
@@ -85,6 +85,7 @@ function validateInput(e, inputEl) {
 INPUTS.forEach((inputEl) => {
   inputEl.addEventListener("input", function (e) {
     validateInput(e, inputEl);
+    getSelected();
     evaluateBill({ ...inputValues });
   });
 });
