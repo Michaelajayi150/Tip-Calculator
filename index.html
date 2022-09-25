@@ -20,7 +20,7 @@
     <form class="form">
       <div class="form-group input-value">
         <label for="bill" class="d-flex justify-content-between align-items-center">
-          <h2>Bill</h2>
+          <span class="heading-text">Bill</span>
           <small class="error-message bill"></small>
         </label>
         <div class="inputs">
@@ -52,13 +52,14 @@
             <label for="tip5">50%</label>
           </div>
           <div class="form-group text-center font">
-            <input class="form-control font" id="custom" type="tel" maxlength="2" placeholder="Custom" />
-            <input class="tip-count" id="select" type="radio" name="tip" autocomplete="off" />
+            <input class="form-control font" id="custom" type="tel" maxlength="2" placeholder="Custom"
+              aria-labelledby="custom" />
+            <input class="tip-count" id="select" type="radio" name="tip" aria-labelledby="tip" />
           </div>
         </div>
 
         <label for="people" class="d-flex justify-content-between align-items-center">
-          <h2>Number of People</h2>
+          <span class="heading-text">Number of People</span>
           <small class="error-message people"></small>
         </label>
         <div class="inputs">
